@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Bootstrap Home</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="CSS/iconic-bootstrap.css">
+
+    <link rel="stylesheet" href="CSS/main.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+
+
+</head>
+
+<nav class="navbar1 bg-dark navbar-dark sticky-top rounded">
+    <p class="welcome-message display-4 p-3">Welcome to Loblaws</p>
+</nav>
+
+
+<body>
+    <main>
+        <div class="welcome-screen page">
+            <div class="jumbotron mt-1">
+                <div class="container">
+                    <h2 class="display-4 mx-auto">Please Select Your Prefered Language</h2>
+                    <!--                <i class="material-icons">shopping_cart</i>-->
+                    <div class="language-buttons mx-auto mt-5">
+                        <button type="button" class="language-btn btn btn-primary btn-lg startBtn">English</button>
+                        <button type="button" class="language-btn btn btn-secondary btn-lg">French</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="items-screen  hidden">
+            <div class="items-list border border-dark border-top-0">
+                <nav class="total-container bg-primary fixed-bottom rounded">
+                    <p class="total text-light display-4 p-4">Total: $0</p>
+                </nav>
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-primary hidden">ARTISAN ROLLS:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$4.99</li>
+                    <li class="list-group-item list-group-item-primary hidden">CASH 120BL RL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$4.99</li>
+                    <li class="list-group-item list-group-item-primary hidden">HOT ITAL SSG&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$4.99</li>
+                    <li class="list-group-item list-group-item-warning hidden">ORANGES CARA LG&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$4.99</li>
+                </ul>
+            </div>
+
+            <div class="instructions border border-dark">
+                <div class="bg-dark mt-5">
+                    <p class="display-4 p-3 text-light instruction-message">Please scan your items</p>
+                </div>
+                <div class="options-buttons mx-auto mt-5">
+                    <button type="button" class="btn btn-primary btn-lg m-2 orangeBtn">I can't scan this (No Barcode)</button>
+                    <button type="button" class="btn btn-primary btn-lg m-2">I have a coupon</button>
+                    <p class="formBox">
+                        <label for="digits">Number of Plastic Bags</label>
+                        <input id="digits" type="number" max="99" min="0" placeholder="0" class="sm" />
+                        <i class="material-icons">keyboard_arrow_up</i>
+                        <i class="material-icons">keyboard_arrow_down</i>
+                    </p>
+                    <audio id="beep">
+                        <source src="sound/censor-beep-2.wav" type="audio/mpeg"/>
+                    </audio>
+                </div>
+
+                <div class="bottom-buttons mx-auto mt-5">
+                    <button type="button" class="btn btn-dark btn-lg m-2">PC Optimum</button>
+                    <button type="button" class="btn btn-warning btn-lg m-2">Change language</button>
+                    <button type="button" class="btn btn-info btn-lg m-2">I need help</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="orange-screen page hidden">
+
+            <div class="input-group container">
+                <input type="text" class="form-control" id="orangeName" placeholder="The name of your produce">
+                <div class="input-group-append">
+                    <button class="btn btn-info btn-lg cancel" type="button">Cancel</button>
+                    <button class="btn btn-primary btn-lg enter" type="button">Enter</button>
+                </div>
+            </div>
+
+            <div class="orangeCheck hidden">
+                <div class="bg-dark mt-5">
+                    <p class="display-4 p-3 text-light instruction-message">Please place your oranges on the scale</p>
+                </div>
+                <p class="formBox">
+                    <label for="digits">How many oranges are there?</label>
+                    <input id="orangeNum" type="number" max="99" min="1" placeholder="1" class="sm" />
+                    <i class="material-icons">keyboard_arrow_up</i>
+                    <i class="material-icons">keyboard_arrow_down</i>
+                    <button type="button" class="btn btn-primary btn-lg m-2" id="check">Check</button>
+                    <button type="button" class="btn btn-secondary btn-lg m-2 hidden" id="enter">Enter</button>
+                </p>
+                <div class="bg-dark mt-5">
+                    <p class="display-4 p-3 text-light instruction-message bigOrSmall"></p>
+                </div>
+            </div>
+            
+            <div class="cards container">
+                <div class="row">
+                    <div class="firstRow row">
+                        <div class="col-12 col-sm-6 col-lg-4">
+                            <div class="card cardSpacing">
+                                <img class="card-img-top" src="IMG/apples.jpg">
+                                <div class="card-body">
+                                    <h5 class="card-title text-light">Apples Red Delicious</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-4">
+                            <div class="card cardSpacing">
+                                <img class="card-img-top" src="IMG/cherries.jpg">
+                                <div class="card-body">
+                                    <h5 class="card-title text-light">Awesome Sweet Cherries</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-4">
+                            <div class="card cardSpacing">
+                                <img class="card-img-top" src="IMG/strawberries.jpg">
+                                <div class="card-body">
+                                    <h5 class="card-title text-light">Albion Strawberries</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="secondRow row hidden">
+                        <div class="col-12 col-sm-6 col-lg-4">
+                            <div class="card cardSpacing">
+                                <img class="card-img-top" src="IMG/big-orange.jpg">
+                                <div class="card-body">
+                                    <h5 class="card-title text-light">Big Oranges</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-4">
+                            <div class="card cardSpacing">
+                                <img class="card-img-top" src="IMG/small-oranges.jpg">
+                                <div class="card-body">
+                                    <h5 class="card-title text-light">Small Oranges</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-4 whichOne">
+                            <div class="card cardSpacing">
+                                <img class="card-img-top" src="IMG/ask-blackboard-chalk-board-356079.jpg">
+                                <div class="card-body">
+                                    <h5 class="card-title text-light">I am not sure which one it is</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="keyboard">
+                <div class="KeyboardRow">
+                    <span class="KeyboardKey">Q</span>
+                    <span class="KeyboardKey">W</span>
+                    <span class="KeyboardKey">E</span>
+                    <span class="KeyboardKey">R</span>
+                    <span class="KeyboardKey">T</span>
+                    <span class="KeyboardKey">Y</span>
+                    <span class="KeyboardKey">U</span>
+                    <span class="KeyboardKey">I</span>
+                    <span class="KeyboardKey">O</span>
+                    <span class="KeyboardKey">P</span>
+                </div>
+                <div class="KeyboardRow">
+                    <span class="KeyboardKey">A</span>
+                    <span class="KeyboardKey">S</span>
+                    <span class="KeyboardKey">D</span>
+                    <span class="KeyboardKey">F</span>
+                    <span class="KeyboardKey">G</span>
+                    <span class="KeyboardKey">H</span>
+                    <span class="KeyboardKey">J</span>
+                    <span class="KeyboardKey">K</span>
+                    <span class="KeyboardKey">L</span>
+                </div>
+                <div class="KeyboardRow">
+                    <span class="KeyboardKey">Z</span>
+                    <span class="KeyboardKey">X</span>
+                    <span class="KeyboardKey">C</span>
+                    <span class="KeyboardKey">V</span>
+                    <span class="KeyboardKey">B</span>
+                    <span class="KeyboardKey">N</span>
+                    <span class="KeyboardKey">M</span>
+                </div>
+            </div>
+
+            <div class="bottom-buttons2 mx-auto mt-5">
+                <button type="button" class="btn btn-dark btn-lg m-2">PC Optimum</button>
+                <button type="button" class="btn btn-warning btn-lg m-2">Change language</button>
+                <button type="button" class="btn btn-info btn-lg m-2">I need help</button>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+    <script src="JS/iconic.min.js"></script>
+    <script src="JS/main.js"></script>
+</body>
+
+</html>
