@@ -57,6 +57,7 @@ function keyPress(ev) {
 
 function whichOne() {
     document.querySelector('.orangeCheck').classList.remove('hidden');
+    document.querySelector('.secondRow').classList.add('hidden');
 }
 
 function bigOrSmall() {
