@@ -17,7 +17,6 @@ let keys = document.querySelectorAll('.KeyboardKey');
 function init() {
     document.querySelector('.startBtn').addEventListener('click', itemScreenOn);
     document.querySelector('.cancel').addEventListener('click', itemScreenOn);
-    document.querySelector('.enter').addEventListener('click', itemScreenOn);
 
     orangeBtn.addEventListener('click', orangeScreenOn);
     keys.forEach(function (key) {
@@ -27,6 +26,11 @@ function init() {
     document.querySelector('.whichOne').addEventListener('click', whichOne);
     document.getElementById('check').addEventListener('click', bigOrSmall);
     document.getElementById('enter').addEventListener('click', enterOrange);
+    document.querySelector('.bigOranges').addEventListener('click', itemScreenOn);
+    
+    items.forEach(function(item){
+        item.addEventListener('click', deleteItem);
+    })
 
 }
 
@@ -35,13 +39,15 @@ function itemScreenOn() {
     welcomeMessage.classList.add('hidden');
     itemScreen.classList.remove('hidden');
     document.querySelector('.orange-screen').classList.add('hidden');
-    
-    
 }
 
 function orangeScreenOn() {
     itemScreen.classList.add('hidden');
     document.querySelector('.orange-screen').classList.remove('hidden');
+}
+
+function deleteItem(ev) {
+    ev.currentTarget.classList.add('hidden');
 }
 
 function keyPress(ev) {

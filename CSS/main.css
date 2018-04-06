@@ -79,13 +79,13 @@ button {
 .options-buttons {
     text-align: center;
     position: relative;
-    top: 30vh;
+    top: 20vh;
 }
 
 .bottom-buttons {
     text-align: center;
     position: relative;
-    top: 50vh;
+    top: 40vh;
 }
 
 #digits,
@@ -109,7 +109,7 @@ label {
 .bottom-buttons2 {
     text-align: center;
     position: relative;
-    top: 15vh;
+    top: 10vh;
 }
 
 .input-group{
@@ -117,7 +117,7 @@ label {
 }
 .keyboard {
     position: relative;
-    top: 15vh;
+    top: 10vh;
 }
 .cardSpacing{
     margin-top: 1vh;
