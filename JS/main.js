@@ -73,6 +73,9 @@ function bigOrSmall() {
 function enterOrange() {
     document.getElementById('orangeName').value = "BIG ORANGES";
     document.querySelector('.orangeCheck').classList.add('hidden');
+    document.querySelector('.secondRow').classList.remove('hidden');
+    document.querySelector('.smallOranges').classList.add('hidden');
+    document.querySelector('.whichOne').classList.add('hidden');
 }
 
 document.addEventListener('keypress', function (ev) {
